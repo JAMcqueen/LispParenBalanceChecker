@@ -4,17 +4,17 @@ import java.util.Stack;
 
 import org.jam.lispchecker.util.LispCheckerConstants;
 
-public class LispCheckerSimple implements LispChecker {
+public class LispCheckerServiceSimple implements LispCheckerService {
 
 	private boolean outputInfo = true;
 	
 	private Stack<String> leftParenthesesStack;
 	
-	public LispCheckerSimple() {
+	public LispCheckerServiceSimple() {
 		leftParenthesesStack = new Stack<>();
 	}
 	
-	public LispCheckerSimple(boolean outputInfo) {
+	public LispCheckerServiceSimple(boolean outputInfo) {
 		leftParenthesesStack = new Stack<>();
 		this.outputInfo = outputInfo;
 	}	

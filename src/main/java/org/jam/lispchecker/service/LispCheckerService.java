@@ -1,5 +1,5 @@
 package org.jam.lispchecker.service;
 
-public interface LispChecker {
+public interface LispCheckerService {
 	boolean areLispParenthesesBalanced(String inputLispString);
 }

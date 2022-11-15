@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LispCheckSimpleTest {
+public class LispCheckServiceSimpleTest {
 	// should pass
 	private static final String basicString = "(a b c)";
 	private static final String complexString = "(((abc cc)(ll d))(o p))";	
@@ -18,11 +18,11 @@ public class LispCheckSimpleTest {
 	private static final String basicFail3 = "(";
 	private static final String basicFail4 = ")";
 	
-	private static LispChecker lispChecker;
+	private static LispCheckerService lispChecker;
 	
 	@Before
 	public void init() {
-		lispChecker = new LispCheckerAdvanced(false);
+		lispChecker = new LispCheckerServiceAdvanced(false);
 	}
 	
 	@Test

@@ -19,7 +19,7 @@ import org.jam.lispchecker.util.LispCheckerConstants;
  * @author Josh McQueen
  *
  */
-public class LispCheckerAdvanced implements LispChecker {
+public class LispCheckerServiceAdvanced implements LispCheckerService {
 
 	private boolean outputInfo = true;
 	
@@ -28,11 +28,11 @@ public class LispCheckerAdvanced implements LispChecker {
 	private boolean inString = false;
 	private boolean inMultipleSymbol = false;
 	
-	public LispCheckerAdvanced() {
+	public LispCheckerServiceAdvanced() {
 		leftParenthesesStack = new Stack<>();
 	}
 	
-	public LispCheckerAdvanced(boolean outputInfo) {
+	public LispCheckerServiceAdvanced(boolean outputInfo) {
 		leftParenthesesStack = new Stack<>();
 		this.outputInfo = outputInfo;
 	}	
