@@ -6,14 +6,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LispCheckerAdvancedTest {
-	
+public class LispCheckerServiceSimpleTest {
 	// should pass
 	private static final String basicString = "(a b c)";
 	private static final String complexString = "(((abc cc)(ll d))(o p))";	
-	private static final String stringEscapeString = "(\"))(())\")";
-	private static final String barEscapeString = "(|((()())))))|)";
-	private static final String escapeString = "(a\\(bc)";
 	
 	// should fail
 	private static final String emptyString = "";
@@ -22,11 +18,11 @@ public class LispCheckerAdvancedTest {
 	private static final String basicFail3 = "(";
 	private static final String basicFail4 = ")";
 	
-	private static LispChecker lispChecker;
+	private static LispCheckerService lispChecker;
 	
 	@Before
 	public void init() {
-		lispChecker = new LispCheckerAdvanced(false);
+		lispChecker = new LispCheckerServiceAdvanced(false);
 	}
 	
 	@Test
@@ -38,22 +34,7 @@ public class LispCheckerAdvancedTest {
 	public void testComplexStringPass() {
 		assertTrue(lispChecker.areLispParenthesesBalanced(complexString));
 	}
-	
-	@Test
-	public void testStringEscapeStringPass() {
-		assertTrue(lispChecker.areLispParenthesesBalanced(stringEscapeString));
-	}	
-	
-	@Test
-	public void testBarEscapeString() {
-		assertTrue(lispChecker.areLispParenthesesBalanced(barEscapeString));
-	}		
-	
-	@Test
-	public void testEscapeStringPass() {
-		assertTrue(lispChecker.areLispParenthesesBalanced(escapeString));
-	}		
-	
+			
 	@Test
 	public void testEmptyStringFail() {
 		assertFalse(lispChecker.areLispParenthesesBalanced(emptyString));
